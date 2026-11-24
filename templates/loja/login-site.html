@@ -1,0 +1,97 @@
+<!DOCTYPE html> <!-- Define o documento como HTML5. -->
+<html lang="pt-BR"> <!-- Informa que o idioma principal da página é português do Brasil. -->
+<head> <!-- Inicia a área de configurações do documento. -->
+    <meta charset="UTF-8"> <!-- Permite exibir corretamente acentos e caracteres especiais. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Faz a página se adaptar à largura de celulares e tablets. -->
+    <title>Adega do JP | Cadastro</title> <!-- Define o texto exibido na aba do navegador. -->
+    <link rel="stylesheet" href="../../static/loja/css/login-estilo.css"> <!-- Reaproveita as cores e variáveis do site principal. -->
+    <link rel="stylesheet" href="../../static/loja/css/login.css"> <!-- Carrega o estilo próprio da página de cadastro. -->
+</head> <!-- Encerra a área de configurações. -->
+<body class="pagina-cadastro"> <!-- Inicia o conteúdo visível da página de cadastro. -->
+
+    <div class="fundo-cadastro" aria-hidden="true"> <!-- Camada decorativa com gotas e brilho laranja ao fundo. -->
+        <span class="gota gota-1"></span>
+        <span class="gota gota-2"></span>
+        <span class="gota gota-3"></span>
+        <span class="gota gota-4"></span>
+    </div>
+
+    <main class="cartao-cadastro"> <!-- Cartão central que concentra marca e formulário. -->
+
+        <div class="lado-marca"> <!-- Coluna de identidade visual, à esquerda em telas largas. -->
+            <span class="marca-icone-grande" aria-hidden="true">🥂</span> <!-- Ícone decorativo relacionado a bebidas. -->
+            <h1>Adega do <strong>JP</strong></h1> <!-- Apresenta o nome da loja em destaque. -->
+            <p class="frase-lado">Primeiro faça seu cadastro para entrar no site do mercado.</p> <!-- Mantém a frase original do formulário. -->
+            <ul class="lista-beneficios"> <!-- Reforça os diferenciais já usados na página inicial. -->
+                <li><span aria-hidden="true">🚚</span>Entrega prática</li>
+                <li><span aria-hidden="true">🛡️</span>Compra segura</li>
+                <li><span aria-hidden="true">💬</span>Atendimento rápido</li>
+            </ul>
+        </div> <!-- Encerra a coluna de identidade. -->
+
+        <div class="lado-formulario"> <!-- Coluna com o formulário de cadastro. -->
+            <p class="etiqueta-forma">CRIAR CONTA</p> <!-- Pequena chamada acima do título do formulário. -->
+            <h2>Seu <span>cadastro</span></h2> <!-- Título do formulário, no mesmo padrão visual do site. -->
+
+            <form class="form-cadastro" novalidate> <!-- Formulário com os mesmos campos e exigências do original. -->
+
+                <div class="campo campo-largo"> <!-- Campo de nome completo. -->
+                    <label for="nome">Nome</label>
+                    <input type="text" id="nome" name="usuario_nome" required placeholder="Preencha seu nome completo">
+                </div>
+
+                <div class="campo campo-largo"> <!-- Campo de CPF. -->
+                    <label for="cpf">CPF</label>
+                    <input type="text" inputmode="numeric" pattern="[0-9]*" name="cpf" id="cpf" required placeholder="Digite somente os números. Ex: 123456789">
+                </div>
+
+                <p class="titulo-grupo">Endereço</p> <!-- Agrupa visualmente os campos de endereço. -->
+
+                <div class="linha-campos"> <!-- Linha com rua e número lado a lado. -->
+                    <div class="campo campo-flex-2">
+                        <label for="rua">Rua / Avenida</label>
+                        <input type="text" name="rua" id="rua" placeholder="Digite sua rua, avenida, beco">
+                    </div>
+                    <div class="campo campo-flex-1">
+                        <label for="numero">Número</label>
+                        <input type="number" name="numero" id="numero" placeholder="Nº">
+                    </div>
+                </div>
+
+                <div class="linha-campos"> <!-- Linha com bairro e complemento lado a lado. -->
+                    <div class="campo campo-flex-1">
+                        <label for="bairro">Bairro</label>
+                        <input type="text" name="bairro" id="bairro" placeholder="Qual seu bairro?">
+                    </div>
+                    <div class="campo campo-flex-1">
+                        <label for="complemento">Complemento</label>
+                        <input type="text" name="complemento" id="complemento" placeholder="Ex: Apto 302">
+                    </div>
+                </div>
+
+                <div class="linha-campos"> <!-- Linha com telefone e data de nascimento lado a lado. -->
+                    <div class="campo campo-flex-1">
+                        <label for="telefone">Telefone</label>
+                        <input type="tel" name="telefone" id="telefone" placeholder="(xx) xxxxx-xxxx">
+                    </div>
+                    <div class="campo campo-flex-1">
+                        <label for="nascimento">Data de nascimento</label>
+                        <input type="date" name="nascimento" id="nascimento">
+                    </div>
+                </div>
+
+                <div class="campo campo-largo"> <!-- Campo de biografia em área de texto. -->
+                    <label for="bio">Escreva sua bio</label>
+                    <textarea name="bio" id="bio" rows="3" placeholder="Conte um pouco sobre você"></textarea>
+                </div>
+
+                <button type="submit" class="botao botao-cadastro">Entrar na Adega do JP <span aria-hidden="true">→</span></button> <!-- Botão final de envio do cadastro. -->
+
+                <p class="aviso-forma">Seus dados ficam protegidos e são usados apenas para suas compras na loja.</p> <!-- Reforça segurança, no mesmo tom do rodapé do site. -->
+            </form>
+        </div> <!-- Encerra a coluna do formulário. -->
+
+    </main> <!-- Encerra o cartão de cadastro. -->
+
+</body> <!-- Encerra o conteúdo da página. -->
+</html> <!-- Encerra o documento HTML. -->

@@ -1,0 +1,124 @@
+/* Define o modelo de caixa para facilitar o controle das larguras e alturas. */
+* { box-sizing: border-box; } /* Inclui bordas e espaçamentos no tamanho total dos elementos. */
+/* Configura a rolagem suave ao clicar nos links internos. */
+html { scroll-behavior: smooth; } /* Faz a página deslizar suavemente até as seções. */
+/* Define as cores e a fonte padrão da página. */
+:root { --preto: #080808; --laranja: #ff8500; --branco: #ffffff; --cinza: #bdbdbd; } /* Cria variáveis para reutilizar as cores do projeto. */
+/* Remove margens padrão e define o fundo principal. */
+body { margin: 0; background: #080808; color: var(--branco); font-family: Arial, Helvetica, sans-serif; } /* Padroniza a aparência geral do site. */
+/* Estiliza o cabeçalho superior. */
+.cabecalho { min-height: 92px; padding: 14px 4%; display: flex; align-items: center; justify-content: space-between; gap: 25px; background: #050505; border-bottom: 3px solid var(--laranja); } /* Alinha marca, menu, pesquisa e ícones em uma linha. */
+/* Organiza o nome e o símbolo da marca. */
+.marca { display: flex; align-items: center; gap: 12px; color: var(--branco); text-decoration: none; white-space: nowrap; } /* Mantém a marca em uma única linha. */
+/* Aumenta o símbolo da marca. */
+.marca-icone { font-size: 42px; } /* Destaca o ícone decorativo da loja. */
+/* Estiliza o texto da marca. */
+.marca-texto { font-size: clamp(22px, 2.2vw, 34px); font-weight: 800; font-style: italic; } /* Ajusta o tamanho da marca conforme a tela. */
+/* Destaca as letras JP em laranja. */
+.marca-texto strong { color: var(--laranja); font-size: 1.25em; } /* Dá destaque ao nome JP. */
+/* Organiza os links do menu. */
+.navegacao { display: flex; align-items: center; gap: clamp(14px, 2.5vw, 38px); } /* Mantém os links alinhados e espaçados. */
+/* Estiliza os links do menu. */
+.navegacao a { color: var(--branco); text-decoration: none; font-size: 15px; font-weight: 700; padding: 12px 3px; } /* Remove o sublinhado e define o peso dos links. */
+/* Destaca o link selecionado e os links ao passar o mouse. */
+.navegacao a:hover, .navegacao a.ativo { color: var(--laranja); border-bottom: 3px solid var(--laranja); } /* Usa laranja para indicar destaque. */
+/* Cria o campo de pesquisa arredondado. */
+.pesquisa { width: min(260px, 22vw); min-width: 150px; height: 48px; display: flex; align-items: center; gap: 10px; padding: 0 15px; border: 2px solid #444; border-radius: 30px; } /* Define tamanho, alinhamento e borda do campo. */
+/* Estiliza o símbolo de pesquisa. */
+.pesquisa span { font-size: 28px; line-height: 1; } /* Aumenta o símbolo de lupa. */
+/* Estiliza o campo onde o visitante digita. */
+.pesquisa input { width: 100%; min-width: 0; color: var(--branco); background: transparent; border: 0; outline: 0; font-size: 14px; } /* Deixa o campo integrado ao fundo escuro. */
+/* Define a cor do texto de exemplo da pesquisa. */
+.pesquisa input::placeholder { color: #aaa; } /* Deixa o texto de exemplo mais discreto. */
+/* Esconde visualmente o rótulo sem removê-lo dos leitores de tela. */
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; } /* Melhora a acessibilidade do formulário. */
+/* Estiliza os atalhos do cabeçalho. */
+.icone-cabecalho { color: var(--branco); text-decoration: none; font-size: 29px; } /* Destaca os ícones de carrinho e conta. */
+/* Cria o banner com duas colunas. */
+.banner { min-height: 355px; display: grid; grid-template-columns: 0.9fr 1.1fr; align-items: center; overflow: hidden; background: radial-gradient(circle at 75% 45%, #57300f 0, #17100a 38%, #050505 72%); border-bottom: 3px solid var(--laranja); } /* Divide o banner entre texto e imagem. */
+/* Organiza os textos do banner. */
+.banner-conteudo { padding: 35px 8%; position: relative; z-index: 1; } /* Mantém o texto afastado das bordas. */
+/* Estiliza a pequena chamada do banner. */
+.etiqueta { color: var(--laranja); font-size: 12px; font-weight: 800; letter-spacing: 3px; } /* Dá aparência de etiqueta promocional. */
+/* Estiliza o título principal. */
+.banner h1 { margin: 12px 0; font-size: clamp(42px, 6vw, 78px); line-height: 1; font-weight: 900; font-style: italic; } /* Cria um título grande e chamativo. */
+/* Destaca JP no título. */
+.banner h1 span, .frase-banner strong { color: var(--laranja); } /* Aplica a cor de destaque da identidade visual. */
+/* Estiliza a frase de divulgação. */
+.frase-banner { max-width: 480px; margin: 18px 0 25px; font-size: clamp(20px, 2.4vw, 31px); line-height: 1.25; font-weight: 700; } /* Ajusta o tamanho e a leitura da frase. */
+/* Estiliza os botões laranjas. */
+.botao { display: inline-flex; justify-content: center; align-items: center; gap: 12px; padding: 13px 20px; color: #080808; background: var(--laranja); border: 0; border-radius: 30px; text-decoration: none; font-weight: 800; transition: transform 0.2s, background 0.2s; } /* Cria botões arredondados com destaque. */
+/* Adiciona um efeito simples ao passar o mouse. */
+.botao:hover { background: #ffa12e; transform: translateY(-2px); } /* Faz o botão subir levemente ao receber o mouse. */
+/* Define a área de imagem do banner. */
+.banner-imagem { min-height: 355px; position: relative; display: flex; align-items: end; justify-content: center; background-image: linear-gradient(90deg, rgba(5,5,5,.2), rgba(5,5,5,.05)), url("https://images.unsplash.com/photo-1513558161293-cdaf765edfd4?auto=format&fit=crop&w=1200&q=85"); background-size: cover; background-position: center; } /* Usa uma fotografia de bebidas e frutas como destaque visual. */
+/* Estiliza o selo sobre a imagem. */
+.selo-banner { margin: 0 8% 25px auto; padding: 15px 20px; color: var(--branco); background: rgba(8,8,8,.82); border-left: 4px solid var(--laranja); font-size: 12px; letter-spacing: 1px; } /* Cria um pequeno selo escuro sobre a foto. */
+/* Destaca a segunda linha do selo. */
+.selo-banner strong { color: var(--laranja); } /* Usa laranja no texto principal do selo. */
+/* Organiza as categorias em uma linha. */
+.categorias { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; padding: 18px 4%; } /* Cria quatro atalhos de mesma largura. */
+/* Estiliza cada categoria. */
+.categoria { min-height: 62px; display: flex; align-items: center; justify-content: center; gap: 12px; padding: 10px; color: var(--branco); border: 2px solid var(--laranja); border-radius: 14px; text-decoration: none; font-weight: 700; transition: background 0.2s; } /* Cria caixas arredondadas para as categorias. */
+/* Aumenta o ícone da categoria. */
+.categoria span { font-size: 25px; } /* Destaca o símbolo de cada categoria. */
+/* Muda o fundo da categoria ao passar o mouse. */
+.categoria:hover { background: #2b1908; } /* Mostra uma resposta visual ao visitante. */
+/* Define o espaçamento da seção de produtos. */
+.secao-produtos { padding: 10px 4% 30px; } /* Afasta a vitrine das bordas da tela. */
+/* Alinha o título da seção e o link de todos os produtos. */
+.titulo-secao { display: flex; align-items: center; justify-content: space-between; gap: 15px; margin-bottom: 18px; border-bottom: 2px solid var(--laranja); } /* Cria uma linha laranja abaixo do título. */
+/* Estiliza o título da vitrine. */
+.titulo-secao h2 { margin: 0 0 10px; font-size: clamp(23px, 3vw, 32px); } /* Ajusta o tamanho do título. */
+/* Destaca a palavra destaque. */
+.titulo-secao h2 span, .sobre h2 span { color: var(--laranja); } /* Mantém a cor laranja nos títulos. */
+/* Estiliza o link ver todos. */
+.ver-todos { margin-bottom: 8px; padding: 8px 15px; color: var(--branco); border: 2px solid var(--laranja); border-radius: 25px; text-decoration: none; white-space: nowrap; } /* Cria um botão sem preenchimento. */
+/* Organiza os cartões de produtos. */
+.grade-produtos { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 18px; } /* Distribui quatro produtos em colunas iguais. */
+/* Estiliza cada cartão de produto. */
+.produto { min-height: 190px; display: flex; align-items: center; gap: 12px; padding: 14px; background: linear-gradient(135deg, #1b1714, #0e0e0e); border: 1px solid #39332d; border-radius: 18px; } /* Cria cartões escuros com bordas discretas. */
+/* Define o espaço da imagem do produto. */
+.produto-foto { flex: 0 0 42%; min-height: 145px; background-size: cover; background-position: center; border-radius: 12px; } /* Reserva espaço para a fotografia de cada item. */
+/* Define a imagem do guaraná. */
+.foto-guarana { background-image: url("https://images.unsplash.com/photo-1581636625402-29b2a704ef13?auto=format&fit=crop&w=500&q=80"); } /* Carrega uma imagem ilustrativa de refrigerante. */
+/* Define a imagem do energético. */
+.foto-energetico { background-image: url("https://images.unsplash.com/photo-1622543925917-763c34d1a86e?auto=format&fit=crop&w=500&q=80"); } /* Carrega uma imagem ilustrativa de lata de energético. */
+/* Define a imagem da água. */
+.foto-agua { background-image: url("https://images.unsplash.com/photo-1564419320461-6870880221ad?auto=format&fit=crop&w=500&q=80"); } /* Carrega uma imagem ilustrativa de água. */
+/* Define a imagem da Coca-Cola. */
+.foto-cocacola { background-image: url("https://images.unsplash.com/photo-1554866585-cd94860890b7?auto=format&fit=crop&w=500&q=80"); } /* Carrega uma imagem ilustrativa de refrigerante de cola. */
+/* Permite que o texto do produto ocupe o espaço restante. */
+.produto-info { min-width: 0; flex: 1; } /* Evita que o conteúdo ultrapasse o cartão. */
+/* Estiliza o tipo do produto. */
+.tipo-produto { margin: 0 0 5px; color: #aaa; font-size: 12px; } /* Exibe a categoria em tamanho menor. */
+/* Estiliza o nome do produto. */
+.produto h3 { margin: 0; font-size: 16px; line-height: 1.25; } /* Destaca o nome sem ocupar muito espaço. */
+/* Estiliza o preço. */
+.preco { margin: 12px 0; color: var(--laranja); font-size: 23px; font-weight: 900; } /* Destaca o preço em laranja. */
+/* Ajusta o botão dentro do cartão. */
+.botao-produto { width: 100%; padding: 10px 8px; border-radius: 12px; font-size: 12px; } /* Faz o botão caber na área de texto. */
+/* Estiliza a seção sobre a loja. */
+.sobre { margin: 0 4% 30px; padding: 24px; text-align: center; background: #121212; border: 1px solid #302820; border-radius: 16px; } /* Cria uma área separada para apresentar a loja. */
+/* Estiliza o título da seção sobre. */
+.sobre h2 { margin: 0 0 10px; } /* Controla o espaço abaixo do título. */
+/* Estiliza o texto da seção sobre. */
+.sobre p { margin: 0; color: #ccc; line-height: 1.6; } /* Melhora a leitura do texto de apresentação. */
+/* Organiza os benefícios do rodapé. */
+.rodape { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; padding: 25px 7%; border-top: 3px solid var(--laranja); background: #050505; } /* Divide o rodapé em três áreas. */
+/* Alinha o ícone e o texto de cada benefício. */
+.beneficio { display: flex; align-items: center; justify-content: center; gap: 14px; } /* Mantém ícone e texto lado a lado. */
+/* Destaca os ícones do rodapé. */
+.beneficio > span { font-size: 34px; } /* Aumenta os símbolos dos benefícios. */
+/* Remove margens do texto do benefício. */
+.beneficio p { display: flex; flex-direction: column; gap: 5px; margin: 0; } /* Organiza título e descrição em duas linhas. */
+/* Define a cor da descrição dos benefícios. */
+.beneficio small { color: #aaa; font-size: 11px; } /* Deixa a descrição mais discreta. */
+/* Estiliza o aviso final do rodapé. */
+.aviso { grid-column: 1 / -1; margin: 5px 0 0; color: #777; text-align: center; font-size: 11px; } /* Faz o aviso ocupar toda a largura do rodapé. */
+/* Ajusta o cabeçalho e a vitrine em telas médias. */
+@media (max-width: 1050px) { .cabecalho { flex-wrap: wrap; justify-content: center; } .grade-produtos { grid-template-columns: repeat(2, minmax(0, 1fr)); } } /* Permite que os elementos quebrem linha em telas menores. */
+/* Ajusta a página para celulares. */
+@media (max-width: 650px) { .cabecalho { gap: 12px; padding: 15px 4%; } .marca { width: 100%; justify-content: center; } .navegacao { width: 100%; justify-content: center; flex-wrap: wrap; gap: 16px; } .navegacao a { font-size: 13px; } .pesquisa { width: 70%; } .banner { grid-template-columns: 1fr; } .banner-conteudo { padding: 35px 7%; } .banner-imagem { min-height: 210px; } .categorias { grid-template-columns: repeat(2, 1fr); gap: 10px; padding: 14px 4%; } .categoria { min-height: 58px; font-size: 13px; } .grade-produtos { grid-template-columns: 1fr; } .produto { min-height: 170px; } .produto-foto { flex-basis: 36%; } .rodape { grid-template-columns: 1fr; gap: 18px; } .beneficio { justify-content: flex-start; } .aviso { line-height: 1.5; } } /* Empilha as áreas e reduz os espaços para caber em celulares. */
+/* Ajusta o layout em celulares muito estreitos. */
+@media (max-width: 360px) { .marca-texto { font-size: 22px; } .categoria { gap: 6px; font-size: 11px; } .produto { padding: 10px; } .preco { font-size: 20px; } } /* Evita que textos e cartões fiquem apertados em telas pequenas. */

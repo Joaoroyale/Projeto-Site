@@ -1,0 +1,569 @@
+
+/* Define o modelo de caixa */
+* {
+    box-sizing: border-box;
+}
+
+/* Rolagem suave */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Cores principais */
+:root {
+    --preto: #080808;
+    --laranja: #ff8500;
+    --branco: #ffffff;
+    --cinza: #bdbdbd;
+}
+
+/* Configuração geral */
+body {
+    margin: 0;
+    background: #080808;
+    color: var(--branco);
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Cabeçalho */
+.cabecalho {
+    min-height: 92px;
+    padding: 14px 4%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 25px;
+    background: #050505;
+    border-bottom: 3px solid var(--laranja);
+}
+
+/* Marca da loja */
+.marca {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--branco);
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+/* Ícone da marca */
+.marca-icone {
+    font-size: 42px;
+}
+
+/* Nome da loja */
+.marca-texto {
+    font-size: clamp(22px, 2.2vw, 34px);
+    font-weight: 800;
+    font-style: italic;
+}
+
+/* Destaque JP */
+.marca-texto strong {
+    color: var(--laranja);
+    font-size: 1.25em;
+}
+
+/* Menu de navegação */
+.navegacao {
+    display: flex;
+    align-items: center;
+    gap: clamp(14px, 2.5vw, 38px);
+}
+
+/* Links do menu */
+.navegacao a {
+    color: var(--branco);
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 700;
+    padding: 12px 3px;
+}
+
+/* Efeito nos links */
+.navegacao a:hover,
+.navegacao a.ativo {
+    color: var(--laranja);
+    border-bottom: 3px solid var(--laranja);
+}
+
+/* Campo de pesquisa */
+.pesquisa {
+    width: min(260px, 22vw);
+    min-width: 150px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 0 15px;
+    border: 2px solid #444;
+    border-radius: 30px;
+}
+
+/* Ícone de pesquisa */
+.pesquisa span {
+    font-size: 28px;
+    line-height: 1;
+}
+
+/* Campo de texto */
+.pesquisa input {
+    width: 100%;
+    min-width: 0;
+    color: var(--branco);
+    background: transparent;
+    border: 0;
+    outline: 0;
+    font-size: 14px;
+}
+
+/* Texto do campo de pesquisa */
+.pesquisa input::placeholder {
+    color: #aaa;
+}
+
+/* Acessibilidade */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+/* Atalhos do cabeçalho */
+.icone-cabecalho {
+    color: var(--branco);
+    text-decoration: none;
+    font-size: 29px;
+}
+
+/* Banner principal */
+.banner {
+    min-height: 355px;
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    align-items: center;
+    overflow: hidden;
+    background: radial-gradient(
+        circle at 75% 45%,
+        #57300f 0,
+        #17100a 38%,
+        #050505 72%
+    );
+    border-bottom: 3px solid var(--laranja);
+}
+
+/* Conteúdo do banner */
+.banner-conteudo {
+    padding: 35px 8%;
+    position: relative;
+    z-index: 1;
+}
+
+/* Etiqueta do banner */
+.etiqueta {
+    color: var(--laranja);
+    font-size: 12px;
+    font-weight: 800;
+    letter-spacing: 3px;
+}
+
+/* Título principal */
+.banner h1 {
+    margin: 12px 0;
+    font-size: clamp(42px, 6vw, 78px);
+    line-height: 1;
+    font-weight: 900;
+    font-style: italic;
+}
+
+/* Destaques do banner */
+.banner h1 span,
+.frase-banner strong {
+    color: var(--laranja);
+}
+
+/* Frase do banner */
+.frase-banner {
+    max-width: 480px;
+    margin: 18px 0 25px;
+    font-size: clamp(20px, 2.4vw, 31px);
+    line-height: 1.25;
+    font-weight: 700;
+}
+
+/* Botões */
+.botao {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    padding: 13px 20px;
+    color: #080808;
+    background: var(--laranja);
+    border: 0;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 800;
+    transition: transform 0.2s, background 0.2s;
+}
+
+/* Efeito dos botões */
+.botao:hover {
+    background: #ffa12e;
+    transform: translateY(-2px);
+}
+
+/* Imagem do banner */
+.banner-imagem {
+    min-height: 355px;
+    position: relative;
+    display: flex;
+    align-items: end;
+    justify-content: center;
+    background-image:
+        linear-gradient(
+            90deg,
+            rgba(5,5,5,.2),
+            rgba(5,5,5,.05)
+        ),
+        url("https://images.unsplash.com/photo-1513558161293-cdaf765edfd4?auto=format&fit=crop&w=1200&q=85");
+    background-size: cover;
+    background-position: center;
+}
+
+/* Selo do banner */
+.selo-banner {
+    margin: 0 8% 25px auto;
+    padding: 15px 20px;
+    color: var(--branco);
+    background: rgba(8,8,8,.82);
+    border-left: 4px solid var(--laranja);
+    font-size: 12px;
+    letter-spacing: 1px;
+}
+
+/* Destaque do selo */
+.selo-banner strong {
+    color: var(--laranja);
+}
+
+/* Categorias */
+.categorias {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+    padding: 18px 4%;
+}
+
+/* Cada categoria */
+.categoria {
+    min-height: 62px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 10px;
+    color: var(--branco);
+    border: 2px solid var(--laranja);
+    border-radius: 14px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: background 0.2s;
+}
+
+/* Ícones das categorias */
+.categoria span {
+    font-size: 25px;
+}
+
+/* Efeito das categorias */
+.categoria:hover {
+    background: #2b1908;
+}
+
+/* Seção de produtos */
+.secao-produtos {
+    padding: 10px 4% 30px;
+}
+
+/* Título da seção */
+.titulo-secao {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 15px;
+    margin-bottom: 18px;
+    border-bottom: 2px solid var(--laranja);
+}
+
+/* Título da vitrine */
+.titulo-secao h2 {
+    margin: 0 0 10px;
+    font-size: clamp(23px, 3vw, 32px);
+}
+
+/* Palavras destacadas */
+.titulo-secao h2 span,
+.sobre h2 span {
+    color: var(--laranja);
+}
+
+/* Link ver todos */
+.ver-todos {
+    margin-bottom: 8px;
+    padding: 8px 15px;
+    color: var(--branco);
+    border: 2px solid var(--laranja);
+    border-radius: 25px;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+/* Grade de produtos */
+.grade-produtos {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 18px;
+}
+
+/* Cartão de produto */
+.produto {
+    min-height: 190px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 14px;
+    background: linear-gradient(135deg, #1b1714, #0e0e0e);
+    border: 1px solid #39332d;
+    border-radius: 18px;
+}
+
+/* Imagens dos produtos */
+.produto-foto {
+    flex: 0 0 42%;
+    width: 42%;
+    height: 160px;
+    object-fit: contain;
+    padding: 6px;
+    background: #ffffff;
+    border-radius: 12px;
+}
+
+/* Informações do produto */
+.produto-info {
+    min-width: 0;
+    flex: 1;
+}
+
+/* Categoria do produto */
+.tipo-produto {
+    margin: 0 0 5px;
+    color: #aaa;
+    font-size: 12px;
+}
+
+/* Nome do produto */
+.produto h3 {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.25;
+}
+
+/* Preço */
+.preco {
+    margin: 12px 0;
+    color: var(--laranja);
+    font-size: 23px;
+    font-weight: 900;
+}
+
+/* Botão do produto */
+.botao-produto {
+    width: 100%;
+    padding: 10px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+}
+
+/* Seção sobre */
+.sobre {
+    margin: 0 4% 30px;
+    padding: 24px;
+    text-align: center;
+    background: #121212;
+    border: 1px solid #302820;
+    border-radius: 16px;
+}
+
+/* Título sobre */
+.sobre h2 {
+    margin: 0 0 10px;
+}
+
+/* Texto sobre */
+.sobre p {
+    margin: 0;
+    color: #ccc;
+    line-height: 1.6;
+}
+
+/* Rodapé */
+.rodape {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 25px 7%;
+    border-top: 3px solid var(--laranja);
+    background: #050505;
+}
+
+/* Benefícios */
+.beneficio {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+}
+
+/* Ícones dos benefícios */
+.beneficio > span {
+    font-size: 34px;
+}
+
+/* Texto dos benefícios */
+.beneficio p {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    margin: 0;
+}
+
+/* Descrição dos benefícios */
+.beneficio small {
+    color: #aaa;
+    font-size: 11px;
+}
+
+/* Aviso do rodapé */
+.aviso {
+    grid-column: 1 / -1;
+    margin: 5px 0 0;
+    color: #777;
+    text-align: center;
+    font-size: 11px;
+}
+
+/* Telas médias */
+@media (max-width: 1050px) {
+    .cabecalho {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .grade-produtos {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* Celulares */
+@media (max-width: 650px) {
+    .cabecalho {
+        gap: 12px;
+        padding: 15px 4%;
+    }
+
+    .marca {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .navegacao {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+
+    .navegacao a {
+        font-size: 13px;
+    }
+
+    .pesquisa {
+        width: 70%;
+    }
+
+    .banner {
+        grid-template-columns: 1fr;
+    }
+
+    .banner-conteudo {
+        padding: 35px 7%;
+    }
+
+    .banner-imagem {
+        min-height: 210px;
+    }
+
+    .categorias {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
+        padding: 14px 4%;
+    }
+
+    .categoria {
+        min-height: 58px;
+        font-size: 13px;
+    }
+
+    .grade-produtos {
+        grid-template-columns: 1fr;
+    }
+
+    .produto {
+        min-height: 170px;
+    }
+
+    .produto-foto {
+        flex-basis: 36%;
+    }
+
+    .rodape {
+        grid-template-columns: 1fr;
+        gap: 18px;
+    }
+
+    .beneficio {
+        justify-content: flex-start;
+    }
+
+    .aviso {
+        line-height: 1.5;
+    }
+}
+
+/* Celulares muito estreitos */
+@media (max-width: 360px) {
+    .marca-texto {
+        font-size: 22px;
+    }
+
+    .categoria {
+        gap: 6px;
+        font-size: 11px;
+    }
+
+    .produto {
+        padding: 10px;
+    }
+
+    .preco {
+        font-size: 20px;
+    }
+}

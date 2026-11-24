@@ -1,0 +1,180 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Adega do JP: bebidas não alcoólicas para todos os momentos.">
+    <title>Adega do JP | Página inicial</title>
+    <link rel="stylesheet" href="../../static/loja/css/estilo.css">
+</head>
+<body>
+    <header class="cabecalho">
+        <a class="marca" href="#" aria-label="Adega do JP - página inicial">
+            <span class="marca-icone" aria-hidden="true">🥂</span>
+            <span class="marca-texto">Adega do <strong>JP</strong></span>
+        </a>
+
+        <nav class="navegacao" aria-label="Navegação principal">
+            <a class="ativo" href="#inicio">Início</a>
+            <a href="#produtos">Produtos</a>
+            <a href="#sobre">Sobre nós</a>
+            <a href="#contato">Contato</a>
+        </nav>
+
+        <form class="pesquisa" role="search">
+            <label class="sr-only" for="buscar">Buscar produtos</label>
+            <span aria-hidden="true">⌕</span>
+            <input id="buscar" type="search" placeholder="Buscar produtos...">
+        </form>
+
+        <a class="icone-cabecalho" href="#produtos" aria-label="Ver produtos">Produtos</a>
+        <a class="icone-cabecalho usuario" href="login.html" aria-label="Fazer cadastro / login">♙</a>
+    </header>
+
+    <main>
+        <section class="banner" id="inicio">
+            <div class="banner-conteudo">
+                <p class="etiqueta">BEM-VINDO À ADEGA</p>
+                <h1>Adega do <span>JP</span></h1>
+                <p class="frase-banner">
+                    As melhores bebidas,
+                    <strong>com o melhor preço!</strong>
+                </p>
+                <a class="botao botao-banner" href="#produtos">
+                    Confira nossos produtos <span aria-hidden="true">→</span>
+                </a>
+            </div>
+
+            <div class="banner-imagem" role="img" aria-label="Copos com bebidas geladas e frutas">
+                <div class="selo-banner">
+                    QUALIDADE<br>
+                    <strong>EM CADA MOMENTO</strong>
+                </div>
+            </div>
+        </section>
+
+        <section class="categorias" aria-label="Categorias de bebidas">
+            <a class="categoria" href="#produtos">Refrigerantes</a>
+            <a class="categoria" href="#produtos">Energéticos</a>
+            <a class="categoria" href="#produtos">Águas</a>
+            <a class="categoria" href="#produtos">Bebidas sem álcool</a>
+        </section>
+
+        <section class="secao-produtos" id="produtos">
+            <div class="titulo-secao">
+                <h2>Produtos em <span>destaque</span></h2>
+                <a href="#contato" class="ver-todos">
+                    Ver todos <span aria-hidden="true">→</span>
+                </a>
+            </div>
+
+            <div class="grade-produtos">
+
+                <!-- Produto 1: Guaraná -->
+                <article class="produto">
+                    <img class="produto-foto"
+                         src="../../static/loja/img/guarana.jpg"
+                         alt="Garrafa de Guaraná Antarctica de 2 litros">
+
+                    <div class="produto-info">
+                        <p class="tipo-produto">Refrigerante</p>
+                        <h3>Guaraná Antarctica</h3>
+                        <p class="preco">R$ 9,90</p>
+                        <a class="botao botao-produto" href="#contato">
+                            Ver produto
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Produto 2: Monster -->
+                <article class="produto">
+                    <img class="produto-foto"
+                         src="../../static/loja/img/energetico.jfif"
+                         alt="Lata de energético Monster">
+
+                    <div class="produto-info">
+                        <p class="tipo-produto">Energético</p>
+                        <h3>Energético</h3>
+                        <p class="preco">R$ 10</p>
+                        <a class="botao botao-produto" href="#contato">
+                            Ver produto
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Produto 3: Coca-Cola -->
+                <article class="produto">
+                    <img class="produto-foto"
+                         src="../../static/loja/img/coca.webp"
+                         alt="Lata de Coca-Cola de 350 ml">
+
+                    <div class="produto-info">
+                        <p class="tipo-produto">Refrigerante</p>
+                        <h3>Coca-Cola</h3>
+                        <p class="preco">R$ 7,50</p>
+                        <a class="botao botao-produto" href="#contato">
+                            Ver produto
+                        </a>
+                    </div>
+                </article>
+
+                <!-- Produto 4: Água mineral -->
+                <article class="produto">
+                    <img class="produto-foto"
+                         src="../../static/loja/img/agua.jpg"
+                         alt="Garrafa de água mineral Crystal de 500 ml">
+
+                    <div class="produto-info">
+                        <p class="tipo-produto">Água</p>
+                        <h3>Água mineral</h3>
+                        <p class="preco">R$ 3,50</p>
+                        <a class="botao botao-produto" href="#contato">
+                            Ver produto
+                        </a>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <section class="sobre" id="sobre">
+            <h2>Sobre a <span>Adega do JP</span></h2>
+            <p>
+                Uma seleção de bebidas para acompanhar bons momentos,
+                com praticidade e atendimento de qualidade.
+            </p>
+        </section>
+    </main>
+
+    <footer class="rodape" id="contato">
+        <div class="beneficio">
+            <span aria-hidden="true">🚚</span>
+            <p>
+                <strong>Entrega prática</strong>
+                <small>Consulte as opções disponíveis</small>
+            </p>
+        </div>
+
+        <div class="beneficio">
+            <span aria-hidden="true">🛡️</span>
+            <p>
+                <strong>Compra segura</strong>
+                <small>Seus dados protegidos</small>
+            </p>
+        </div>
+
+        <div class="beneficio">
+            <span aria-hidden="true">💬</span>
+            <p>
+                <strong>Atendimento</strong>
+                <small>Estamos aqui para ajudar</small>
+            </p>
+        </div>
+
+        <p class="aviso">
+            Preços e produtos apresentados são apenas exemplos de demonstração.
+        </p>
+    </footer>
+</body>
+</html>
